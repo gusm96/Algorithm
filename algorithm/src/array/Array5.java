@@ -21,22 +21,15 @@ import java.io.InputStreamReader;
 public class Array5 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
-		int[] students = new int[30];
-		int[] hw = new int[28];
-		for (int i = 0; i < students.length; i++) {
-			students[i] = i + 1;
+		boolean[] students = new boolean [31];
+		for (int i = 0; i < 28; i++) {
+			students[Integer.parseInt(br.readLine())] = true;
 		}
-		for (int i = 0; i < hw.length; i++) {
-			hw[i] = Integer.parseInt(br.readLine());
-		}
-		for (int i = 0; i < students.length; i++) {
-			for(int j = 0; j< hw.length; j++) {
-				if(students[i] != hw[j]) {
-					sb.append(students[i]).append("\n");
-				}
+		for(int i = 1; i <= 30; i++) {
+			if(!students[i]) {
+				System.out.println(i);
 			}
 		}
-		System.out.println(sb);
+		
 	}
 }
