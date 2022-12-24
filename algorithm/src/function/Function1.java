@@ -2,7 +2,7 @@ package function;
 
 import java.io.IOException;
 
-// BackJoon 15596 정수 N의 합
+// BaekJoon 15596 정수 N의 합
 
 // 문제 
 // 정수 n개가 주어졌을 때, n개의 합을 구하는 함수를 작성하시오.

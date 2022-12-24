@@ -1,5 +1,5 @@
 package function;
-// BackJoon 4673 셀프 넘버
+// BaekJoon 4673 셀프 넘버
 
 // 문제
 // 셀프 넘버는 1949년 인도 수학자 D.R.Kaprekar가 이름 붙였다.

@@ -1,5 +1,5 @@
 package array;
-// BackJoon 4344 평균은 넘겠지
+// BaekJoon 4344 평균은 넘겠지
 
 import java.io.BufferedReader;
 import java.io.IOException;

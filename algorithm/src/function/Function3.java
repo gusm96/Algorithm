@@ -1,5 +1,5 @@
 package function;
-// BackJoon 1065 한수
+// BaekJoon 1065 한수
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-// BackJoon 11654 ASCII code
+// BaekJoon 11654 ASCII code
 
 // 문제
 // 알파벳 소문자, 대문자, 숫자 0-9중 하나가 주어졌을 때,
@@ -19,7 +19,7 @@ import java.io.InputStreamReader;
 public class String1 {
 	public static void main(String[] args)throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String text = br.readLine();
+		System.out.println((int)br.readLine().toCharArray()[0]);
 		
 	}
 }

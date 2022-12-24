@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-// BackJoon 25304
+// BaekJoon 25304
 
 // 문제
 // 준원이는 저번 주에 살면서 처음으로 코스트코를 가 봤다.

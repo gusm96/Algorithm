@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-// BackJoon 5597 과제 안 내신 분..?
+// BaekJoon 5597 과제 안 내신 분..?
 
 // 문제
 // X대학 모교수님은 프로그래밍 수업을 맡고 있다.
