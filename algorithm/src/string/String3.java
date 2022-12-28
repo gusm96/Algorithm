@@ -21,10 +21,40 @@ import java.io.InputStreamReader;
 // 단어의 첫 번째 글자는 0번째 위치이고, 두 번째 글자는 1번째 위치이다.
 
 public class String3 {
-	public static void main(String[] args)throws IOException{
+	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		String [] arr = br.readLine().split("");
-		for(int i = 0; i < arr.length; i++) {
+		String s = br.readLine();
+		System.out.println("1==============================================\n");
+		stringCharAt(s);
+		System.out.println("\n2==============================================\n");
+		stringIndexOf(s);
+	}
+
+	// charAt()을 이용한 방법
+	public static void stringCharAt(String s) {
+		// a-z 26개의 알파벳을 -1로 초기화
+		int[] arr = new int[26];
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = -1;
 		}
+
+		for (int i = 0; i < s.length(); i++) {
+			char ch = s.charAt(i);
+			if (arr[ch - 'a'] == -1) {
+				arr[ch - 'a'] = i;
+			}
+		}
+		for (int var : arr) {
+			System.out.print(var + " ");
+		}
+	}
+
+	// indexOf()를 이용한 방법
+	public static void stringIndexOf(String s) {
+		StringBuilder sb = new StringBuilder();
+		for (char c = 'a'; c <= 'z'; c++)
+			sb.append(s.indexOf(c) + " ");
+		System.out.println(sb);
+
 	}
 }
