@@ -28,9 +28,6 @@ public class String5 {
 			int temp = s.charAt(i) - 65; // A-Z 아스키코드 값에서 -65 를 하면 해당 index 를 얻을 수 있다.
 			arr[temp]++; // 해당 index에 ++
 		}
-		for (int var : arr) {
-			System.out.println(var);
-		}
 		int max = -1; // 배열의 초기 값이 0이기 때문에 -1로 지정
 		char ch = '?';
 		for (int i = 0; i < arr.length; i++) {
