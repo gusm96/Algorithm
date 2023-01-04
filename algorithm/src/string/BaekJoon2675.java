@@ -20,7 +20,7 @@ import java.util.StringTokenizer;
 // 출력
 // 각 테스트 케이스에 대해 P를 출력한다.
 
-public class String4 {
+public class BaekJoon2675 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st;

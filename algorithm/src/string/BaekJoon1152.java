@@ -1,5 +1,4 @@
 package string;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -22,7 +21,7 @@ import java.util.StringTokenizer;
 // 츨력
 // 첫째 줄에 단어의 개수를 출력한다.
 
-public class String6 {
+public class BaekJoon1152 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		// StringTokenizer st = new StringTokenizer(br.readLine());

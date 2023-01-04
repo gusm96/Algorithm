@@ -16,7 +16,7 @@ import java.io.InputStreamReader;
 // 출력
 // 입력으로 주어진 글자의 아스키 코드 값을 출력한다.
 
-public class String1 {
+public class BaekJoon11654 {
 	public static void main(String[] args)throws IOException{
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println((int)br.readLine().toCharArray()[0]);

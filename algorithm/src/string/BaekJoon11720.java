@@ -15,7 +15,7 @@ import java.io.InputStreamReader;
 
 // 출력
 // 입력으로 주어진 숫자 N개의 합을 출력한다.
-public class String2 {
+public class BaekJoon11720 {
  public static void main (String [] args)throws IOException{
 	 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	 int [] arr = new int[Integer.parseInt(br.readLine())];
