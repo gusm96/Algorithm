@@ -3,7 +3,6 @@ package math1;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
 // BaekJoon 1193 분수 찾기
 
@@ -20,11 +19,35 @@ import java.util.ArrayList;
 public class BaekJoon1193 {
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		// 원하는 위치의 분수 값을 찾기 위한 X를 입력 받는다.
 		int x = Integer.parseInt(br.readLine());
+		firstSolution(x);
 
-		int a = 1; // 분자
-		int b = 1; // 분모
-		
+	}
 
+	public static void firstSolution(int x) {
+		int diagonal = 1, diagCnt = 0;
+		int parent, child = 0;
+		while (true) {
+			if (x <= diagCnt + diagonal) {
+				// 홀수 이냐 짝수이냐
+				if (diagonal % 2 == 1) {
+					// 홀수에는 분모 증가 분자 감소
+					parent = x - diagCnt;
+					child = diagonal - (x-diagCnt-1);
+					System.out.println(child+"/"+parent);
+					break;
+				} else {
+					// 짝수에는 분자 증가 분모 감소
+					parent = diagonal - (x-diagCnt-1);
+					child = x - diagCnt;
+					System.out.println(child+"/"+parent);
+					break;
+				}
+			} else {
+				diagCnt += diagonal; 
+				diagonal++;
+			}
+		}
 	}
 }
