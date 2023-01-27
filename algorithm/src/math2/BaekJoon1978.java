@@ -35,7 +35,7 @@ public class BaekJoon1978 {
 	}
 
 	public static void primeNumber(int[] arr) {
-		int n = 1000;
+		int n = 1000; // 1,000 이하의 자연수
 		// 배열을 초기화 한다.
 		for (int i = 2; i <= n; i++) {
 			arr[i] = i;
