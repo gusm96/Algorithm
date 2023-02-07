@@ -8,13 +8,14 @@ public class Solution {
 		int[] answer;
 		Stack<Integer> st = new Stack<>();
 		for (int i = 0; i < arr.length - 1; i++) {
-			if(st.size() == 0 || st.peek() != arr[i])
+			if (st.size() == 0 || st.peek() != arr[i])
 				st.push(arr[i]);
 		}
 		answer = new int[st.size()];
 		for (int i = answer.length - 1; i >= 0; i--) {
 			answer[i] = st.pop();
 		}
+
 		return answer;
 	}
 
