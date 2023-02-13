@@ -1,10 +1,24 @@
 package study;
 
+import java.util.Scanner;
+
 public class CodingTest {
 
-
+	public static int solution(int n) {
+        int answer = 1;
+        int pizza = 6;
+        if(n % pizza == 0){
+            answer = Math.max(n , pizza) / Math.min(n,pizza);
+        }
+        while((Math.max(n, (pizza * answer)) % Math.min(n,(pizza* answer))) != 0){
+            answer++;
+        }
+        return answer;
+    }
 	public static void main(String[] args) {
-		int [][] commands = {{2,5,3}, {4,4,1},{1,7,3}};
+		Scanner sc = new Scanner(System.in);
+		System.out.println(solution(sc.nextInt()));
+		sc.close();
 		}
 	
 }
