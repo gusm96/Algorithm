@@ -1,5 +1,6 @@
 package programmers.level1.bruteForce;
 
+
 public class MinimumRectangle {
 	public int solution(int[][] sizes) {
 		int answer = 0;
@@ -8,6 +9,7 @@ public class MinimumRectangle {
 			maxW = Math.max(maxW, Math.max(sizes[i][0], sizes[i][1]));
 			maxH = Math.max(maxH, Math.min(sizes[i][0], sizes[i][1]));
 		}
+		
 		answer = maxW * maxH;
 		return answer;
 	}
@@ -16,5 +18,8 @@ public class MinimumRectangle {
 		int[][] sizes = { { 60, 50 }, { 30, 70 }, { 60, 30 }, { 80, 40 } };
 		MinimumRectangle mr = new MinimumRectangle();
 		System.out.println(mr.solution(sizes));
+		String s = "asdvdd";
+		System.out.println(s.substring(0,1));
+		
 	}
 }
