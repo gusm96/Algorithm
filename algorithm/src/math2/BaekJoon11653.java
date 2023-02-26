@@ -3,7 +3,6 @@ package math2;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
 // BaekJoon 11653 소인수분해
 
 // 문제
