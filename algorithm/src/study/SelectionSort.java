@@ -1,7 +1,4 @@
 package study;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Arrays;
 
 // SelectionSort 선택정렬
@@ -15,35 +12,24 @@ import java.util.Arrays;
 // 3. 맨 처음 위치를 뺀 나머지 배열을 같은 방법으로 교체한다.
 
 public class SelectionSort {
-	public static void main(String[] args) throws IOException{
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		
-		int [] arr = new int[Integer.parseInt(br.readLine())];
-		for(int i = 0; i < arr.length; i++) {
-			arr[i] = Integer.parseInt(br.readLine());
-		}
-		selection(arr);
+	public static void main(String[] args){
+		int[] arr = {3, 12, 2, 1, 27, 32, 58};
+		System.out.println(selectionSort(arr));
 	}
-	public static void selection(int [] arr) {
+	private static String selectionSort(int[] arr) {
 		int indexMin, temp;
-		for(int i = 0; i < arr.length -1; i++) {
-			// 우선, 위치(index)를 선택해준다.
+		for(int i = 0; i < arr.length-1; i++) {
 			indexMin = i;
-			// i+1번쨰 원소부터 선택한 위치(index)의 값과 비교를 시작한다.
-			for(int j = i+1 ; j < arr.length; j++) {
-				// 오름차순이므로 현재 선택한 자리에 있는 값보다 순회하고 있는 값이 작다면,
-				// 위치(index)를 갱신해준다.
+			for(int j = i+1; j < arr.length; j++) {
 				if(arr[j] < arr[indexMin]) {
-					indexMin =j;
+					indexMin = j;
 				}
 			}
-			// 2번 반복문이 끝난 뒤에는 indexMin에 '1'번에서 선택한 위치(index)에
-			// 들어가야하는 값의 위치(index)를 갖고 있으므로 서로 교환해준다.
 			temp = arr[indexMin];
 			arr[indexMin] = arr[i];
 			arr[i] = temp;
 		}
-		System.out.println(Arrays.toString(arr));
+		return Arrays.toString(arr);
 	}
 }
 // 장점

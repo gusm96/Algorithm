@@ -1,8 +1,5 @@
 package study;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Arrays;
 
 // Insertion Sort 삽입 정렬
@@ -17,27 +14,26 @@ import java.util.Arrays;
 // 2. temp와 이전에 있는 원소들과 비교하여 삽입해나간다.
 // 3. '1'번으로 돌아가 다음 위치(index)의 값을 temp에 저장하고, 반복한다.
 public class InsertionSort {
-	public static void main(String[] args)throws IOException{
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int [] arr = new int[Integer.parseInt(br.readLine())];
-		for(int i = 0; i < arr.length; i++) {
-			arr[i] = Integer.parseInt(br.readLine());
-		}
-		insertionSort(arr);
+	public static void main(String[] args){
+		int [] arr = {24 , 32, 2, 52, 12, 8};
+		System.out.println(insertionSort(arr));
 	}
 	
-	public static void insertionSort(int [] arr) {
-		for(int index = 1; index < arr.length; index++) {
-			// 2번째 index 값을 temp 에 저장한다.
-			int temp = arr[index];
-			// 1번째 index 값
-			int prev = index -1;
-			while((prev >= 0) && (arr[prev] > temp)) {
-				arr[prev+1] = arr[prev];
+	private static String insertionSort(int [] arr) {
+		for(int i = 1; i < arr.length; i++) { // 2번째 index 부터 시작
+			int temp = arr[i]; // 임의로 해당 index 값 저장
+			int prev = i-1; // 이전 index 저장
+			int count = 1;
+			System.out.println("temp = "+temp+"\nprev = "+arr[prev]);
+			while((prev >= 0) && (arr[prev] > temp)) { //이전 index 가 0이상 이고 그 값이 임의로 저장된 temp값 보다 큰경우 while 문 실행
+				arr[prev + 1] = arr[prev];
 				prev--;
+				System.out.println("while 횟수 = "+count);
+				count ++;
 			}
-			arr[prev + 1] = temp;
+			arr[prev+1] = temp;
+			System.out.println("arr[prev+1] = "+arr[prev+1]+"\n");
 		}
-		System.out.println(Arrays.toString(arr));
+		return Arrays.toString(arr);
 	}
 }

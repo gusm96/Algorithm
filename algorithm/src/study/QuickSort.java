@@ -1,5 +1,7 @@
 package study;
 
+import java.util.Arrays;
+
 // Quick Sort 퀵정렬
 // Quick Sort는 분할 정복(divide and conpuer)방법 을 통해 주어진 배열을 정렬한다.
 // [분할 정복(divide and conpuer)방법 이란?]
@@ -16,39 +18,50 @@ package study;
 //    이 알고리즘은 반드시 끝난다는 것을 보장할 수 있다.
 
 public class QuickSort {
-	public void quickSort(int[] array, int left, int right) {
-		 if(left >= right) return;
-		    
-		    // 분할 
-		    int pivot = partition(array, left, right); 
-		    
-		    // 피벗은 제외한 2개의 부분 배열을 대상으로 순환 호출
-		    quickSort(array, left, pivot-1);  // 정복(Conquer)
-		    quickSort(array, pivot+1, right); // 정복(Conquer)
-		    }
-
-	public int partition(int[] array, int left, int right) {
-		 /**
-	    // 최악의 경우, 개선 방법
-	    int mid = (left + right) / 2;
-	    swap(array, left, mid);
-	    */
-	    
-	    int pivot = array[left]; // 가장 왼쪽값을 피벗으로 설정
-	    int i = left, j = right;
-	    
-	    while(i < j) {
-	        while(pivot < array[j]) {
-	            j--;
-	        }
-	        while(i < j && pivot >= array[i]){
-	            i++;
-	        }
-	      //  swap(array, i, j);
-	    }
-	    array[left] = array[i];
-	    array[i] = pivot;
-	    
-	    return i;
-	    }
+	private static void quickSort(int[] arr) {
+		// 재귀 함수 호출 시작 index 와 끝 index
+		quickSort(arr, 0, arr.length-1);
+	}
+	private static void quickSort(int[] arr, int start, int end) {
+		// 해당 배열방의 시작과 끝 영역 안에서 partition을 나눈다.
+		int right = partition(arr, start, end); // 나눈 partition의 오른쪽 방 첫번째 값을 받아온다.
+		// 오른쪽 partition이 시작점(start) 바로 다음에서 시작한다면 
+		// 왼쪽 partition에 데이터가 하나뿐이라 정렬할 필요가 없다.
+		// 그래서 오른쪽 partition에서 시작점에서 한개 이상 차이날 때만 재귀호출 진행
+		if(start < right -1) {
+			quickSort(arr, start, right -1);
+		}
+		// 그리고 오른쪽 partition의 시작점이 한개 이상일때만 호출해야해서
+		// 오른쪽 partition의 시작점이 마지막 배열방 보다 작을 경우에만 오른쪽 partition 정렬하도록 한다.
+		if(right < end) {
+			quickSort(arr, right, end);
+		}
+	}
+	private static int partition(int[] arr, int start, int end) {
+		int pivot = arr[(start + end)/2]; // pivot 값은 배열의 중간 값으로 설정.
+		// 시작점이 끝 지점보다 작거나 같은 경우에 반복문 실행
+		while(start <= end) {
+			// 배열의 start 값이 pivot 보다 작으면 pass
+			while(arr[start]<pivot) start++;
+			// 배열의 end값이 pivot 보다 크면 pass 
+			while(arr[end] > pivot) end--;
+			if(start <= end) {
+				swap(arr,start,end);
+				start++;
+				end--;
+			}
+		}
+		return start;
+	}
+	private static void swap(int[] arr, int start , int end) {
+		int temp = arr[start];
+		arr[start] = arr[end];
+		arr[end] = temp;
+	}
+	public static void main(String[] args) {
+		int[] arr = {3, 12, 7 ,23 , 58, 24, 42};
+		System.out.println("정렬 전\n"+Arrays.toString(arr));
+		quickSort(arr);
+		System.out.println("\n정렬  후 "+Arrays.toString(arr));
+	}
 }
