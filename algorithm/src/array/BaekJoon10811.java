@@ -36,15 +36,19 @@ public class BaekJoon10811 {
 			st = new StringTokenizer(br.readLine());
 			int start = Integer.parseInt(st.nextToken()) -1;
 			int end = Integer.parseInt(st.nextToken()) -1;
-			if(start == end) continue;
-			for(int j = start; j < end; j++) {
-				int temp = basket[end];
-				basket[end] =basket[j];
-				basket[j] =temp;
-				end--;
-			}
+			changeBasketNum(basket, start, end);
 		}
-		System.out.println(Arrays.toString(basket));
+        System.out.println(printBasket(basket));
+		
+	}
+	private static void changeBasketNum(int[] basket, int start, int end) {
+		while(start < end){
+            int temp = basket[start];
+            basket[start] = basket[end];
+            basket[end] = temp;
+            start++;
+            end--;
+        }
 	}
 	private static int[] insertBasket(int n) {
 		int[] basket = new int[n];
@@ -53,4 +57,12 @@ public class BaekJoon10811 {
 		}
 		return basket;
 	}
+    private static String printBasket (int[] basket){
+        String answer = "";
+        for(int val : basket){
+            answer +=val;
+            answer +=" ";
+        }
+        return answer;
+    }
 }
