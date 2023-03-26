@@ -97,3 +97,12 @@ replay_pid*
 # End of https://www.toptal.com/developers/gitignore/api/java,eclipse
 algorithm/.classpath
 algorithm/.project
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
