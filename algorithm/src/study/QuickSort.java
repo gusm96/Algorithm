@@ -60,7 +60,7 @@ public class QuickSort {
 	}
 	public static void main(String[] args) {
 		int[] arr = {3, 12, 7 ,23 , 58, 24, 42};
-		System.out.println("정렬 전\n"+Arrays.toString(arr));
+		System.out.println("정렬 전"+Arrays.toString(arr));
 		quickSort(arr);
 		System.out.println("\n정렬  후 "+Arrays.toString(arr));
 	}
