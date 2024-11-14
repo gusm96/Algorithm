@@ -1,8 +1,6 @@
 package programmers.level1.sort;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 // https://school.programmers.co.kr/learn/courses/30/lessons/42748
 /*
@@ -86,10 +84,38 @@ public class KthNumber {
         arr[right] = temp;
     }
 
+    // 다른 사람이 푼 문제
+    public int[] solution2(int[] array, int[][] commands) {
+        int[] answer = new int[commands.length];
+
+        for (int i = 0; i < commands.length; i++) {
+            int[] temp = Arrays.copyOfRange(array, commands[i][0] - 1, commands[i][1]);
+            Arrays.sort(temp);
+            answer[i] = temp[commands[i][2] - 1];
+        }
+
+        return answer;
+    }
+
     public static void main(String[] args) {
         int[] array = {1, 5, 2, 6, 3, 7, 4};
         int[][] commands = {{2, 5, 3}, {4, 4, 1}, {1, 7, 3}};
         KthNumber kn = new KthNumber();
-        System.out.println(Arrays.toString(kn.solution(array, commands)));
+
+        // Measure execution time for solution
+        long startTime1 = System.nanoTime();
+        System.out.println("Solution 1 : " + Arrays.toString(kn.solution(array, commands)));
+        long endTime1 = System.nanoTime();
+        long duration1 = endTime1 - startTime1;
+
+        // Measure execution time for solution2
+        long startTime2 = System.nanoTime();
+        System.out.println("Solution 2 : " + Arrays.toString(kn.solution2(array, commands)));
+        long endTime2 = System.nanoTime();
+        long duration2 = endTime2 - startTime2;
+
+        // Print execution time
+        System.out.println("Execution time of solution: " + duration1 + " ns");
+        System.out.println("Execution time of solution2: " + duration2 + " ns");
     }
 }
