@@ -2,8 +2,6 @@ package programmers.level2.sort;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
 
 /*
 문제 설명
@@ -30,6 +28,7 @@ citations	    return
 */
 public class HIndex {
     public static int solution(int[] citations) {
+
         int answer = 0;
 
         Integer[] arr = Arrays.stream(citations)
