@@ -79,9 +79,9 @@ public class QuickSort2 {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[10000];
-        for (int i = 0; i < 10000; i++) {
-            arr[i] = 10000 - i; // 역순으로 채우기
+        int[] arr = new int[1000000];
+        for (int i = 0; i < 1000000; i++) {
+            arr[i] = 1000000 - i; // 역순으로 채우기
         }
 
         int[] arr2 = arr.clone();
